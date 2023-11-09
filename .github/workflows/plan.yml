@@ -1,0 +1,29 @@
+name: CI with terraform and digger
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [ closed, opened, synchronize, reopened ]
+  workflow_dispatch:
+
+jobs:
+
+  lint-terraform:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run-digger
+        uses: diggerhq/digger@v0.2.4
+        with:
+          setup-aws: true
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
