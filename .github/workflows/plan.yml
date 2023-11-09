@@ -1,4 +1,4 @@
-name: CI with digger
+name: CI with digger terra
 
 on:
   pull_request:
