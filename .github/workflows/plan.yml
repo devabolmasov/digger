@@ -31,9 +31,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
-          #digger-token: ${{ secrets.DIGGER_TOKEN }}
-          #digger-organisation: ${{ secrets.DIGGER_ORGANISATION }}
-          #digger-hostname: https://cloud.uselemon.cloud/   
+          digger-token: ${{ secrets.DIGGER_TOKEN }}
+          digger-organisation: ${{ secrets.DIGGER_ORGANISATION }}
+          digger-hostname: https://cloud.uselemon.cloud/   
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
