@@ -1,5 +1,5 @@
 projects:
-- name: dev
+- name: devabolmasov
   dir: dev
   workflow: my_custom_workflow
 workflows:
