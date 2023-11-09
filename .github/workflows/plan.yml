@@ -1,4 +1,4 @@
-name: CI with terraform and digger
+name: CI with digger
 
 on:
   pull_request:
