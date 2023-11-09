@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [ "main" ]
     types: [ closed, opened, synchronize, reopened ]
+  issue_comment:
+    types: [created]
   workflow_dispatch:
 
 jobs:
@@ -16,6 +18,11 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    permissions:    
+      contents: write      # required to merge PRs
+      id-token: write      # required for workload-identity-federation
+      pull-requests: write # required to post PR comments
+      statuses: write      # required to validate combined PR status
     steps:
       - name: run-digger
         uses: diggerhq/digger@v0.2.4
