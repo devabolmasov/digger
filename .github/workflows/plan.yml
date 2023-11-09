@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [ "main" ]
     types: [ closed, opened, synchronize, reopened ]
+  issue_comment:
+    types: [created]
+    if: contains(github.event.comment.body, 'digger')
   workflow_dispatch:
 
 jobs:
