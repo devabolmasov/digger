@@ -1,6 +1,6 @@
 auto_merge: false
 projects:
-- name: dev
+- name: devabolmasov
   dir: dev
 #workflows:
 #  my_custom_workflow:
