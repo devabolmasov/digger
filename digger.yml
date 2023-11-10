@@ -2,9 +2,10 @@ auto_merge: false
 projects:
 - name: devabolmasov
   dir: dev
-#workflows:
-#  my_custom_workflow:
-#    workflow_configuration:
-#      on_pull_request_pushed: [digger plan]
-#      on_pull_request_closed: [digger unlock]
-#      on_commit_to_default: [digger apply]
+workflow: my_custom_workflow
+workflows:
+  my_custom_workflow:
+    workflow_configuration:
+      on_pull_request_pushed: [digger plan]
+      on_pull_request_closed: [digger unlock]
+      on_commit_to_default: [digger apply]
