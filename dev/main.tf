@@ -3,6 +3,7 @@ terraform {
     backend "s3" {
         bucket = "devops-intern-ilovekharkiv"
         key = "digger/state.tfstate"
+        region = "eu-north-1"
     }
 }
 
